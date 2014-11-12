@@ -110,9 +110,12 @@ function next() {
 
       }
 
-      var avg = json.values.reduce(function (p, c) {
-        return p + c;
-      }, 0) / json.values.length;
+      var avg = 0;
+      if (json.values[0] === -9999) {
+        avg = json.values.reduce(function (p, c) {
+          return p + c;
+        }, 0) / json.values.length;
+      }
 
       if (avg != -9999) {
 
